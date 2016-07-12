@@ -6,3 +6,10 @@ task wrapper(type: Wrapper) {
   distributionUrl = "https://services.gradle.org/distributions/gradle-$gradleVersion-all.zip"
 }
 
+task buildDocker {
+  "docker build --rm -t thirstybear/ftpd_test .".execute()
+}
+
+task deployDocker {
+  "docker deploy thirstybear/ftpd_test".execute()
+}
